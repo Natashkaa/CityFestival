@@ -1,0 +1,91 @@
+@media (min-width: 1000px){
+    .descr .name{
+        font-size: 100px;
+    }
+}
+@media (min-width: 700px) and (max-width: 1000px) {
+    .descr .name{
+        font-size: 60px;
+    }
+}
+@media (min-width: 100px) and (max-width: 800px) {
+    .descr .name{
+        font-size: 40px;
+    }
+}
+.main-container{
+    width: 100%;
+    height: 940px;
+    padding: 0
+}
+.yellow-row{ 
+    background-image: url('../images/firstBckg.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    
+}
+.yellow-row-descr{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 96%;
+    width: 100%;
+    color: white;
+    margin: 0;
+    background-color: rgba(206, 39, 95, 0.301);
+}
+.descr{
+    text-align: center;
+}
+.descr .day{
+    font-size: 30px;
+    margin-bottom: 50px;
+    font-weight: lighter;
+    font-family: 'Courier New', Courier, monospace;
+}
+.descr .name{
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+/*arrow start*/
+.t-cover__arrow {
+    display: inline-block;
+    height: 4%;
+    width: 100%;
+    z-index: 9;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    background-color: rgba(206, 39, 95, 0.301);
+}
+.t-cover__arrow-wrapper { 
+    display: inline-block;
+    -webkit-transition: all ease-in-out 0.2s;
+    -moz-transition: all ease-in-out 0.2s;
+    -o-transition: all ease-in-out 0.2s;
+    transition: all ease-in-out 0.2s;
+    cursor: pointer;
+}
+@keyframes t-arrow-bottom {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-7px);
+    }
+    55% {
+        transform: translateY(-7px);
+    }
+    100% {
+        transform: translateY(-7px);
+    }
+}  
+.t-cover__arrow-wrapper_animated {
+    animation: t-arrow-bottom  1s infinite ease;
+    animation-direction: alternate;
+}
+/*arrow end*/

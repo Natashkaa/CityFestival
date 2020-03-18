@@ -1,29 +1,58 @@
 @media (min-width: 1000px){
+    .yellow-row-descr{
+        height: 915px;
+    }
     .descr .name{
         font-size: 100px;
     }
+    .second-row-descr{
+        font-size: 30px;
+    }
+    .third-row{
+        padding: 0 200px 50px 200px;
+    }
 }
 @media (min-width: 700px) and (max-width: 1000px) {
+    .yellow-row-descr{
+        height: 715px;
+    }
     .descr .name{
         font-size: 60px;
     }
+    .second-row-descr{
+        font-size: 25px;
+    }
+    .third-row{
+        padding: 0 100px 50px 100px;
+    }
 }
 @media (min-width: 100px) and (max-width: 800px) {
+    .yellow-row-descr{
+        height: 500px;
+    }
     .descr .name{
         font-size: 40px;
     }
+    .second-row-descr{
+        font-size: 20px;
+    }
+    .third-row{
+        padding: 0 60px 50px 60px;
+    }
 }
+html {
+    scroll-behavior: smooth;
+  }
 .main-container{
     width: 100%;
-    height: 940px;
     padding: 0
 }
+/*first row*/
 .yellow-row{ 
     background-image: url('../images/firstBckg.png'); 
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 100%;
     margin: 0;
     
 }
@@ -31,7 +60,6 @@
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    height: 96%;
     width: 100%;
     color: white;
     margin: 0;
@@ -89,3 +117,38 @@
     animation-direction: alternate;
 }
 /*arrow end*/
+
+/*second row*/
+.second-row{
+    height: 400px;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center !important;
+}
+.second-row-descr{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/*third row*/
+.third-row{
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(255, 255, 255);
+}
+.third_row_hr{
+    width: 100%;
+    border: 1px solid rgba(194, 83, 31, 0.712);
+    border-radius: 50px;
+    box-shadow: 0 0px 5px rgba(255, 0, 0, 0.5);
+}
+.item{
+    width: 100%;
+}
+.item h2{
+    font-size: 35px;
+}

@@ -14,8 +14,19 @@
     .programm-row-descr{
         font-size: 30px;
     }
-    .program-pistures-row-context{
-        width: 55%
+    .program-vinyl-row-context{
+        width: 100%
+    }
+    .program-donut-row-context{
+        width: 47%;
+        margin-right: auto;
+    }
+    .program-smoke-row-context{
+        width: 47%;
+        margin-left: auto;
+    }
+    .program-singer-row-context{
+        width: 100%
     }
 }
 @media (min-width: 700px) and (max-width: 1000px) {
@@ -34,8 +45,19 @@
     .programm-row-descr{
         font-size: 30px;
     }
-    .program-pistures-row-context{
-        width: 90%
+    .program-vinyl-row-context{
+        width: 100%
+    }
+    .program-donut-row-context{
+        width: 100%;
+        margin-bottom: 25px
+    }
+    .program-smoke-row-context{
+        width: 100%;
+        margin-top: 25px
+    }
+    .program-singer-row-context{
+        width: 100%
     }
 }
 @media (min-width: 100px) and (max-width: 800px) {
@@ -55,8 +77,19 @@
         font-size: 25px;
         margin: 0 20px
     }
-    .program-pistures-row-context{
-        width: 85%
+    .program-vinyl-row-context{
+        width: 100%
+    }
+    .program-donut-row-context{
+        width: 100%;
+        margin-bottom: 25px
+    }
+    .program-smoke-row-context{
+        width: 100%;
+        margin-top: 25px
+    }
+    .program-singer-row-context{
+        width: 100%
     }
 }
 html {
@@ -186,40 +219,106 @@ html {
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
 }
+.lil-font{
+    font-size: 20px;
+}
 /*pictures*/
 .programm-pictures-row{
     width: 100%;
     margin: 0;
-    padding: 50px 0;
     display: flex;
     justify-content: center;
     align-items: center !important;
-
-   
+    background-color: rgba(231, 231, 231, 0.596);
 }
-.program-pistures-row-context{
+.program-vinyl-row-context{
     background-image: url('../images/progImg1.png'); 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: 550px;
-    padding: 0
+    padding: 0;
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
 }
 .gradient{
     width: 100%;
     height: 100%;
-    background-image: -webkit-linear-gradient(top, rgba(0, 255, 234, 0.342), rgba(0, 0, 0, 0.267));
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.205), rgba(0, 0, 0, 0.781));
     transition: all ease-in-out 1s;
     font-size: 40px;
     color: white;
     font-weight: lighter;
     font-family: 'Courier New', Courier, monospace;
     display: flex;
-    justify-content: flex-start;
     align-items: flex-end;
     padding: 0 0 20px 20px
 }
 .gradient:hover {
-    opacity: 50%;
+    opacity: 60%;
     transition: 2s;
   }
+  /**/
+  .programm-couple-pictures-row{
+    width: 100%;
+    margin: 0;
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: rgba(231, 231, 231, 0.596);
+  }
+  .container-cpl-pctrs{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    justify-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  .program-donut-row-context{
+    background-image: url('../images/progImg2.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 350px;
+    padding: 0;
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
+  }
+  .program-smoke-row-context{
+    background-image: url('../images/progImg3.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 350px;
+    padding: 0;
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
+  }
+  
+  .program-singer-row-context{
+    background-image: url('../images/progImg4.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 600px;
+    padding: 0;
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
+}
+  .program-vinyl-row-context:hover, 
+  .program-donut-row-context:hover, 
+  .program-smoke-row-context:hover,
+  .program-singer-row-context:hover{
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+

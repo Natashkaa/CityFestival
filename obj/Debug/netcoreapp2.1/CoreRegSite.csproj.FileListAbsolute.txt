@@ -25,3 +25,5 @@ C:\Users\Natashka\desktop\CoreRegSite\obj\Debug\netcoreapp2.1\CoreRegSite.Views.
 C:\Users\Natashka\desktop\CoreRegSite\obj\Debug\netcoreapp2.1\CoreRegSite.dll
 C:\Users\Natashka\desktop\CoreRegSite\obj\Debug\netcoreapp2.1\CoreRegSite.pdb
 C:\Users\Natashka\desktop\CoreRegSite\obj\Debug\netcoreapp2.1\CoreRegSite.csproj.CopyComplete
+C:\Users\Natashka\Desktop\CoreRegSite\obj\Debug\netcoreapp2.1\Razor\Views\Home\RegistrationForm.g.cshtml.cs
+C:\Users\Natashka\Desktop\CoreRegSite\obj\Debug\netcoreapp2.1\Razor\Views\Home\GetParticipants.g.cshtml.cs

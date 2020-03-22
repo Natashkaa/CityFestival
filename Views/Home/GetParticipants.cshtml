@@ -1,0 +1,15 @@
+@model IEnumerable<CoreRegSite.Participant>
+@{
+    ViewBag.Title = "Participants";
+}
+<h1>@ViewBag.Title</h1>
+
+<ul>
+@foreach (var item in Model)
+{
+    <li>email: @item.ParticipantEmail name:  @item.ParticipantFirstName</li>
+}
+</ul>
+<div>@Html.ActionLink("New", "create")
+YAAAAAAAAAAAAAAAA
+<h1>YAAAAAAAAAAAAAA</h1>

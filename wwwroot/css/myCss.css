@@ -31,6 +31,9 @@
     .map{
         height: 800px;
     }
+    .form-container{
+        width: 30%
+    }
 }
 @media (min-width: 700px) and (max-width: 1000px) {
     .yellow-row-descr{
@@ -64,6 +67,9 @@
     }
     .map{
         height: 400px;
+    }
+    .form-container{
+        width: 70%
     }
 }
 @media (min-width: 100px) and (max-width: 700px) {
@@ -99,6 +105,9 @@
     }
     .map{
         height: 400px;
+    }
+    .form-container{
+        width: 90%
     }
 }
 html {
@@ -369,4 +378,79 @@ html {
     height: 100%;
     border-radius: 10px;
 }
+
+/*from*/
+.form-row{
+    margin: 0;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center !important;
+    background-color: rgba(231, 231, 231, 0.596);
+}
+.form-descr{
+    text-align: center;
+    margin: 0 0 40px 0
+}
+.form-descr h1{
+    font-size: 55px;
+    font-weight: 500;
+    font-family: 'Courier New', Courier, monospace;
+}
+.form-descr p{
+    line-height: 1;
+    font-size: 26px;
+    font-weight: 300;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(0, 0, 0);
+}
+
+/*from*/
+.form-container{
+}
+.btn-send{
+    width: 100%;
+    background-color: rgba(255, 174, 0, 0.856);
+    border-radius: 10px;
+    height: 70px;
+    border: none;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    outline: none;
+    transition: 1s;
+}
+.btn-send:hover{
+    background-color: rgb(255, 102, 0);
+}
+
+
+
+.error-container{
+    background-color: rgba(255, 30, 0);
+}
+.field-validation-error {
+    color: rgb(255, 147, 147);
+} 
+.field-validation-valid { 
+    display: none;
+} 
+.input-validation-error{ 
+    border: 1px solid #f00; 
+    background-color: rgb(253, 253, 253); 
+} 
+.validation-summary-errors { 
+    font-size: 26px;
+    color: rgb(255, 255, 255);   
+} 
+.validation-summary-errors ul{
+    list-style: none;
+    text-align: center;
+}
+.validation-summary-valid { 
+    display: none;
+}
+
 

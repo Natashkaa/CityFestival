@@ -4,40 +4,37 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using CoreRegSite.Models;
 
 namespace CoreRegSite.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult About()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult RegistrationForm(UserModel model)
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
+            if(!ModelState.IsValid){
+                return PartialView("RegistrationForm");
+            }
+            return PartialView("RegistrationForm");
         }
 
-        public IActionResult Contact()
+        [HttpGet]
+        public async Task<IActionResult> GetParticipants()
         {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            using ( var context = new CityFestContext())
+            {
+                var model = await context.Participants.ToListAsync();
+                return View(model);
+            }
         }
     }
 }

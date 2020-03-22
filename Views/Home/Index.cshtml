@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<CoreRegSite.Participant>
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -128,4 +129,28 @@
         </div>
     </div>
 </div>
+
+<div class="row form-row">
+<div class="container form-descr col-lg-12 col-md-12 col-sm-10">
+        <h1>Как стать участником?</h1>
+    </div>
+    <div class="container form-descr col-lg-6 col-md-10 col-sm-10">
+        <p>Если вы варите невероятный кофе, делаете украшения, играете в группе или театре или ведете другое интересное дело, 
+            мы вам очень рады! Напишите как вы поможете сделаете фестиваль ярче!
+        </p>
+    </div>
+    <div class="form-container" id="regForm">
+        @await Html.PartialAsync("RegistrationForm")
+    </div>
+</div>
+
+<div>
+    <h1>
+        Here will be ours participants!
+    </h1>
+    <div>
+        @Html.ActionLink("get participant", "GetParticipants", "Home");
+    </div>
+</div>
+
 

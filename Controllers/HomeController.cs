@@ -19,21 +19,26 @@ namespace CoreRegSite.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult RegistrationForm(UserModel model)
+        public async Task<IActionResult> RegistrationForm(UserModel model)
         {
             if(!ModelState.IsValid){
                 return PartialView("RegistrationForm");
             }
-            return PartialView("RegistrationForm");
+            // model = null;
+            // return PartialView("GetParticipants");
+            using ( var context = new CityFestContext())
+            {
+                var users = await context.Participants.AsNoTracking().ToListAsync();
+                return PartialView("GetParticipants", users);
+            }
         }
 
-        [HttpGet]
         public async Task<IActionResult> GetParticipants()
         {
             using ( var context = new CityFestContext())
             {
-                var model = await context.Participants.ToListAsync();
-                return View(model);
+                var model = await context.Participants.AsNoTracking().ToListAsync();
+                return PartialView("GetParticipants");
             }
         }
     }

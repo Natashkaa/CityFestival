@@ -2,12 +2,27 @@
 @{
     ViewBag.Title = "Participants";
 }
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CoreRegSite</title>
 
-<ul>
-@foreach (var item in Model)
-{
-    <li>email: @item.ParticipantEmail name:  @item.ParticipantFirstName</li>
-}
-</ul>
-YAAAAAAAAAAAAAAAA
-<h1>YAAAAAAAAAAAAAA</h1>
+    </head>
+<body>
+    <table class="table table-striped table-light table-hover table-bordered">
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ParticipantEmail</td> 
+                    <td>@item.ParticipantFirstName</td> 
+                    <td>@item.ParticipantSecondName</td> 
+                    <td>@item.ParticipantActivity</td>
+                </tr>
+            }
+        </tbody>
+
+</body>
+</html>

@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using CoreRegSite.Interfaces;
+using CoreRegSite.Repositories;
 
 namespace CoreRegSite
 {
@@ -31,8 +33,8 @@ namespace CoreRegSite
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddScoped<IRepository<Participant>, ParticipantRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

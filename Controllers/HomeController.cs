@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using CoreRegSite.Models;
 using CoreRegSite.Interfaces;
 using Microsoft.AspNetCore.Routing;
+using System.Net.Mail;
+using System.Net;
 
 namespace CoreRegSite.Controllers
 {
@@ -50,9 +52,16 @@ namespace CoreRegSite.Controllers
             };
             participantRepo.Add(newUser);
             participantRepo.SaveChanges();
+
+           var client = new SmtpClient("smtp.gmail.com", 587)
+            {
+                Credentials = new NetworkCredential("natasha.cat982404@gmail.com", "123denatasik"),
+                EnableSsl = true
+            };
+            await client.SendMailAsync("natasha.cat982404@gmail.com", newUser.ParticipantEmail, "Благодарим за регистрацию", "Ваша заявка будет рассмотрена в ближайшее время)");
+
             using ( var context = new CityFestContext())
             {
-                var users = await context.Participants.AsNoTracking().ToListAsync();
                 return Content("<script>window.location='/Home/GetParticipants'</script>");
             }
         }

@@ -10,15 +10,18 @@ using CoreRegSite.Interfaces;
 using Microsoft.AspNetCore.Routing;
 using System.Net.Mail;
 using System.Net;
+using AutoMapper;
 
 namespace CoreRegSite.Controllers
 {
     public class HomeController : Controller
     {
         IRepository<Participant> participantRepo;
+        private readonly IMapper mapper;
 
-        public HomeController(IRepository<Participant> partRepo){
+        public HomeController(IRepository<Participant> partRepo, IMapper _mapper){
             this.participantRepo = partRepo;
+            this.mapper = _mapper;
         }
         [HttpGet]
         public IActionResult Index()
@@ -36,29 +39,21 @@ namespace CoreRegSite.Controllers
             IEnumerable<Participant> parts = participantRepo.GetAll();
             foreach(Participant p in parts)
             {
-                if(p.ParticipantEmail == model.Email){
+                if(p.ParticipantEmail == model.ParticipantEmail){
                     ModelState.AddModelError("Email", "Этот email уже используется");
                     return PartialView("RegistrationForm", model);
                 }
             }
-
-            Participant newUser = new Participant
-            {
-                ParticipantEmail = model.Email,
-                ParticipantFirstName = model.FirstName,
-                ParticipantSecondName = model.SecondName,
-                ParticipantPhone = model.Phone,
-                ParticipantActivity = model.Activity
-            };
-            participantRepo.Add(newUser);
+            var mappedUser = mapper.Map<Participant>(model);
+            participantRepo.Add(mappedUser);
             participantRepo.SaveChanges();
 
            var client = new SmtpClient("smtp.gmail.com", 587)
             {
-                Credentials = new NetworkCredential("natasha.cat982404@gmail.com", "123denatasik"),
+                Credentials = new NetworkCredential("natasha.cat982404@gmail.com", "************"),
                 EnableSsl = true
             };
-            await client.SendMailAsync("natasha.cat982404@gmail.com", newUser.ParticipantEmail, "Благодарим за регистрацию", "Ваша заявка будет рассмотрена в ближайшее время)");
+            await client.SendMailAsync("natasha.cat982404@gmail.com", model.ParticipantEmail, "Благодарим за регистрацию", "Ваша заявка будет рассмотрена в ближайшее время)");
 
             using ( var context = new CityFestContext())
             {
@@ -71,7 +66,8 @@ namespace CoreRegSite.Controllers
             using ( var context = new CityFestContext())
             {
                 var allUsers = await context.Participants.AsNoTracking().ToListAsync();
-                return View(allUsers);
+                var mappedUsers = mapper.Map<List<Participant>, List<SimpleUserModel>>(allUsers);
+                return View(mappedUsers);
             }
         }
     }

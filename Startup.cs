@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using CoreRegSite.Interfaces;
 using CoreRegSite.Repositories;
+using AutoMapper;
 
 namespace CoreRegSite
 {
@@ -35,6 +36,8 @@ namespace CoreRegSite
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddScoped<IRepository<Participant>, ParticipantRepository>();
+
+            services.AddAutoMapper(typeof(Startup));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

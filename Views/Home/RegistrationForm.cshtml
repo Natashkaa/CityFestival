@@ -2,25 +2,24 @@
 
 @using (Html.BeginForm("RegistrationForm", "Home", FormMethod.Post, new { id = "register-form", data_ajax = "true", data_ajax_update = "#register-form", data_ajax_mode = "replace" }))
         {
-            
-            <div class="form-group">@Html.TextBoxFor(m => m.Email, new { placeholder = "youremail@gmail.com", @class = "form-control inputs" })
-                @Html.ValidationMessageFor(m => m.Email)</div>
-            
-
-            <div class="form-group">@Html.TextBoxFor(m => m.FirstName, new { placeholder = "Имя", @class = "form-control inputs" })
-                @Html.ValidationMessageFor(m => m.FirstName)</div>
+            <div class="form-group">@Html.TextBoxFor(m => m.ParticipantEmail, new { placeholder = "youremail@gmail.com", @class = "form-control inputs" })
+                @Html.ValidationMessageFor(m => m.ParticipantEmail)</div>
             
 
-            <div class="form-group">@Html.TextBoxFor(m => m.SecondName, new { placeholder = "Фамилия", @class = "form-control inputs" })
-                @Html.ValidationMessageFor(m => m.SecondName)</div>
+            <div class="form-group">@Html.TextBoxFor(m => m.ParticipantFirstName, new { placeholder = "Имя", @class = "form-control inputs" })
+                @Html.ValidationMessageFor(m => m.ParticipantFirstName)</div>
             
 
-            <div class="form-group">@Html.TextBoxFor(m => m.Phone, new { placeholder = "+380...", @class = "form-control inputs" })
-                @Html.ValidationMessageFor(m => m.Phone)</div>
+            <div class="form-group">@Html.TextBoxFor(m => m.ParticipantSecondName, new { placeholder = "Фамилия", @class = "form-control inputs" })
+                @Html.ValidationMessageFor(m => m.ParticipantSecondName)</div>
             
 
-            <div class="form-group">@Html.TextAreaFor(m => m.Activity, new { placeholder = "Напишите нам", @class = "form-control inputs", @rows = 5 })
-                @Html.ValidationMessageFor(m => m.Activity)</div>
+            <div class="form-group">@Html.TextBoxFor(m => m.ParticipantPhone, new { placeholder = "+380...", @class = "form-control inputs" })
+                @Html.ValidationMessageFor(m => m.ParticipantPhone)</div>
+            
+
+            <div class="form-group">@Html.TextAreaFor(m => m.ParticipantActivity, new { placeholder = "Напишите нам", @class = "form-control inputs", @rows = 5 })
+                @Html.ValidationMessageFor(m => m.ParticipantActivity)</div>
 
             <input class="btn-send" type="submit" value="Отправить" autocomplete="off"/>
         }

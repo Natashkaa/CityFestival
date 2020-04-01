@@ -552,7 +552,9 @@ html {
 }
 
 
-
+.user-table{
+    height: 450px
+}
 .paging-container {
     display: flex;
     vertical-align: central;

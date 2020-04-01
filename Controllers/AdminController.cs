@@ -66,6 +66,12 @@ namespace CoreRegSite.Controllers
         {
             ViewBag.PageCount = Math.Ceiling((decimal)participantRepo.GetCount() / Users_per_page);
             ViewBag.CurrentPageNumber = id;
+
+            int process = (Users_per_page * id * 100) / participantRepo.GetCount();
+            if(process > 100){
+                ViewBag.ProcessNow = 100;
+            }else ViewBag.ProcessNow = process;
+            
             var users = participantRepo.GetAll()
                                         .ToList()
                                          .Skip((id - 1) * Users_per_page)

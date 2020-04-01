@@ -60,7 +60,7 @@ using CoreRegSite.Models;
             WriteLiteral("\r\n<html>\r\n");
             EndContext();
             BeginContext(85, 100, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ea8b43db14004b21afadb14f90468f44", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "49146a583ad649b3a64b46b5e5facfde", async() => {
                 BeginContext(91, 87, true);
                 WriteLiteral("\r\n    <meta name=\"viewport\" content=\"width=device-width\" />\r\n    <title>Login</title>\r\n");
                 EndContext();
@@ -80,7 +80,7 @@ using CoreRegSite.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(187, 240, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6942f671f16b42df87505589369227b7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aae1b8c2a6b74fb9a77475abd3b279d0", async() => {
                 BeginContext(193, 44, true);
                 WriteLiteral("\r\n    <center>\r\n        <h3>LoginPage</h3>\r\n");
                 EndContext();

@@ -1,0 +1,22 @@
+@model CoreRegSite.Models.AdminModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <center>
+        <h3>LoginPage</h3>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary()
+            @Html.EditorForModel()
+            <input type="submit"/>
+        }
+    </center>
+</body>
+</html>

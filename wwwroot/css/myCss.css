@@ -467,11 +467,11 @@ html {
 } 
 .input-validation-error{ 
     border: 1px solid #f00; 
-    background-color: rgb(253, 253, 253); 
+    background-color: rgb(253, 2, 2); 
 } 
 .validation-summary-errors { 
     font-size: 26px;
-    color: rgb(255, 255, 255);   
+    color: rgb(255, 0, 0);   
 } 
 .validation-summary-errors ul{
     list-style: none;
@@ -549,4 +549,22 @@ html {
 .partner-img:hover {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+}
+
+
+
+.paging-container {
+    display: flex;
+    vertical-align: central;
+}
+.pageNumber {
+    height: 50px;
+    width: 50px;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    font-size: 20px
 }

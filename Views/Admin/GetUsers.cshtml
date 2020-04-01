@@ -1,0 +1,70 @@
+@model List<CoreRegSite.Models.UserModel>
+@{
+    ViewBag.Title = "Adminka";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CoreRegSite</title>
+
+    </head>
+<body>
+        @if(User.Identity.Name == "Admin"){
+                        <h3>@User.Identity.Name</h3>
+                        <a href="/Admin/LogOut">Log out</a>
+                    }
+    <div class="mt-2 paging-container">
+        <button class="btn btn-lg btn-info mr-1" id="decr"><</button>
+            <div class="pageNumber mr-1 pt-n3" id="curPageNumber">@ViewBag.CurrentPageNumber</div>
+        <button class="btn btn-lg btn-info mr-1" id="inc" data-pageCount=@ViewBag.PageCount>></button>
+    </div>
+
+    <div id="part_users">
+        <table class="table table-striped table-light table-hover table-bordered">
+            <tbody> 
+            
+            @foreach (var item in Model)
+            {
+                <tr> 
+                    <td>@item.ParticipantEmail</td>
+                    <td>@item.ParticipantFirstName</td> 
+                    <td>@item.ParticipantSecondName</td> 
+                    <td>@item.ParticipantPhone</td>
+                    <td>@item.ParticipantActivity</td>
+                    @if(User.Identity.Name == "Admin"){
+                        <td><a href="/Admin/Delete/@item.ParticipantId" class="btn btn-primary">Delete</a></td>
+                    }
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+    
+
+
+    @* <table class="table table-striped table-light table-hover table-bordered">
+        
+        <tbody> 
+            
+            @foreach (var item in Model)
+            {
+                <tr> 
+                    <td>@item.ParticipantEmail</td>
+                    <td>@item.ParticipantFirstName</td> 
+                    <td>@item.ParticipantSecondName</td> 
+                    <td>@item.ParticipantPhone</td>
+                    <td>@item.ParticipantActivity</td>
+                    @if(User.Identity.Name == "Admin"){
+                        <td><a href="/Admin/Delete/@item.ParticipantId" class="btn btn-primary">Delete</a></td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table> *@
+
+    
+    
+</body>
+</html>

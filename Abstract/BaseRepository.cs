@@ -20,14 +20,29 @@ namespace CoreRegSite.Abstract
             db.Set<TEntity>().Add(newEntity);
         }
 
+        public void Delete(TEntity entity)
+        {
+            db.Set<TEntity>().Remove(entity);
+        }
+
         public void Dispose()
         {
             db.Dispose();
         }
 
+        public TEntity Get(int id)
+        {
+            return db.Set<TEntity>().Find(id);
+        }
+
         public IEnumerable<TEntity> GetAll()
         {
             return db.Set<TEntity>();
+        }
+
+        public int GetCount()
+        {
+            return db.Set<TEntity>().Count();
         }
 
         public void SaveChanges()

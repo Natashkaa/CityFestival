@@ -16,7 +16,7 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0"/>
     <PackageReference Include="Owin" Version="1.0.0"/>
     <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.3"/>
-    <PackageReference Include="Microsoft.AspNet.Identity.Owin" Version="2.2.3"/>
+    <PackageReference Include="Microsoft.AspNet.Identity.Owin" Version="2.2.4"/>
     <PackageReference Include="Microsoft.Owin" Version="4.1.0"/>
     <PackageReference Include="Microsoft.Owin.Host.SystemWeb" Version="4.1.0"/>
     <PackageReference Include="Microsoft.Owin.Security" Version="4.1.0"/>
